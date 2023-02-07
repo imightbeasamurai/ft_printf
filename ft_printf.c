@@ -48,6 +48,8 @@ int	ft_printf(const char *str, ...)
 	if (!str)
 		return (0);
 	va_start(args, str);
+	if(write(1 ,0 ,0) < 0)
+		return (-1);
 	while (str[i])
 	{
 		if (str[i] == '%')
