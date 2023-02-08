@@ -64,3 +64,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (index);
+}
