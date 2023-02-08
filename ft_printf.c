@@ -40,29 +40,27 @@ int	ft_flag(va_list args, char flag)
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
+	int		index;
 	int		i;
-	int		x;
 
-	x = 0;
+	index = 0;
 	i = 0;
 	if (!str)
 		return (0);
 	va_start(args, str);
-	if(write(1 ,0 ,0) < 0)
+	if (write(1, 0, 0) < 0)
 		return (-1);
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
 			if (str[++i] != '%')
-				x += ft_flag(args, str[i]);
+				index += ft_flagh(args, str[i]);
 			else
-				x += ft_putchar(str[i]);
+				index += ft_putchar(str[i]);
 		}
 		else
-			x += ft_putchar(str[i]);
-		i++;
+			index += ft_putchar(str[++i]);
 	}
 	va_end(args);
-	return (x);
-}
+	return (index);
