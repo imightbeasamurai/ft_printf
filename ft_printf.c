@@ -60,8 +60,8 @@ int	ft_printf(const char *str, ...)
 				index += ft_putchar(str[i]);
 		}
 		else
-			index += ft_putchar(str[++i]);
+			index += ft_putchar(str[i]);
+		i++;
 	}
-	va_end(args);
-	return (index);
+	return (va_end(args) , index);
 }
