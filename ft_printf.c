@@ -55,7 +55,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			if (str[++i] != '%')
-				index += ft_flagh(args, str[i]);
+				index += ft_flag(args, str[i]);
 			else
 				index += ft_putchar(str[i]);
 		}
